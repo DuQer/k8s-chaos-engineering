@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: astro-blog
+spec:
+  type: ClusterIP
+  selector:
+    app: astro-blog
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4321
