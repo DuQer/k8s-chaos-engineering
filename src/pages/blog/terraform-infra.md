@@ -1,6 +1,6 @@
-title: "Zarządzanie infrastrukturą z Terraformem"
-pubDate: 2025-03-20
-description: "Infra-as-Code na serio: provisioning, zmiany, rollbacki"
-author: Jan DevOps
+Title: "Managing Infrastructure with Terraform"
+Publication Date: March 20, 2025
+Description: "Infra-as-Code for real: provisioning, changes, rollbacks"
+Author: Marcin DevOps
 
-W tym wpisie pokazuję, jak efektywnie zarządzać infrastrukturą w chmurze przy użyciu Terraform.
+In this post, I show how to efficiently manage cloud infrastructure using Terraform.
