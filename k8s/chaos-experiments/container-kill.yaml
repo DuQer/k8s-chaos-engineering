@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: container-kill-example
+  namespace: default
+spec:
+  action: container-kill
+  mode: one
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: k8s-chaos-engineering
+  containerNames:
+    - k8s-chaos-engineering
+  duration: "30s"

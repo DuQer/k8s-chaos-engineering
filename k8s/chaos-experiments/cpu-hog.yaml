@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: cpu-hog-example
+  namespace: default
+spec:
+  mode: one
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: k8s-chaos-engineering
+  stressors:
+    cpu:
+      workers: 2
+  duration: "1m"

@@ -1,0 +1,14 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: disk-pressure-example
+  namespace: default
+spec:
+  mode: one
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: k8s-chaos-engineering
+  duration: "2m"
+  stressngStressors: "hdd 1 --hdd-bytes 512M"
