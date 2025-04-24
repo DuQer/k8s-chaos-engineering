@@ -1,48 +1,60 @@
-# Astro Starter Kit: Basics
+# ⚙️ Kubernetes Chaos Engineering & Monitoring Setup
 
-```sh
-npm create astro@latest -- --template basics
+This project provides a complete setup for **Chaos Engineering** and **Kubernetes cluster monitoring** using:
+
+- 🔥 Chaos Mesh – for injecting chaos and testing resiliency
+- 📈 Prometheus – for metrics collection
+- 📊 Grafana – for visualization
+- 📦 Node Exporter – for node-level metrics
+- 🧪 Custom Grafana Dashboard – tailored for real, node-level metrics
+
+All components run inside **Minikube** and are accessible via **ngrok** tunnel for external access.
+
+---
+
+## 🚀 Tech Stack
+
+- **Kubernetes (Minikube)**
+- **Prometheus** for time-series metrics
+- **Grafana** for visualization
+- **Node Exporter** for host-level metrics
+- **Chaos Mesh** for chaos injection
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Start Minikube
+```bash
+minikube start --driver=docker
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+### 2. Apply Kubernetes manifests
+```bash
+kubectl apply -f manifests/
 ```
+### 3. Port-forward Prometheus and Grafana
+```bash
+kubectl port-forward -n monitoring svc/prometheus 9090:9090
+kubectl port-forward -n monitoring svc/grafana 3000:80
+```
+### 4. Access services in the browser
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Prometheus → http://localhost:9090
 
-## 🧞 Commands
+Grafana → http://localhost:3000
 
-All commands are run from the root of the project, from a terminal:
+## 📊 Grafana Dashboard
+Located at: grafana/dashboards/dashboard-provider.json
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Includes panels for:
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Node CPU Usage
+- Node Memory Usage
+- Node Disk Usage
+- Node Filesystem Free Space
+- Node Network I/O (Receive + Transmit)
+- Node Disk I/O (Read + Write)
+- Node Filesystem I/O
+- Node Load (1m avg)
+- Node Network Errors
+- Node Swap Usage
