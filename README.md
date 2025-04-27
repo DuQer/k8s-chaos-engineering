@@ -30,7 +30,7 @@ minikube start --driver=docker
 ```
 ### 2. Apply Kubernetes manifests
 ```bash
-kubectl apply -f manifests/
+kubectl apply -f k8s/
 ```
 ### 3. Port-forward Prometheus and Grafana
 ```bash
