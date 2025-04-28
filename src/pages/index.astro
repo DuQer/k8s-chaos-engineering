@@ -3,12 +3,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <h1 class="text-4xl font-bold mb-4">Hi, I'm a DevOps Engineer!</h1>
-  <p class="mb-6">On this blog, I share knowledge about DevOps, automation, and cloud infrastructure ☁️</p>
+  <section class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-20">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-6">Hi, I'm a DevOps Engineer!</h1>
+      <p class="text-2xl mb-8">I build scalable, reliable, cloud-native systems ☁️🚀</p>
+      <a href="/contact" class="inline-block px-8 py-4 bg-white text-indigo-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition">
+        Get in Touch
+      </a>
+    </div>
+  </section>
 
-  <h2 class="text-2xl font-semibold mb-2">📌 Latest Posts</h2>
-  <ul class="list-disc list-inside">
-    <li><a class="text-blue-400 hover:underline" href="/blog/ci-cd-k8s">CI/CD in Kubernetes with Rollbacks</a></li>
-    <li><a class="text-blue-400 hover:underline" href="/blog/terraform-infra">Infrastructure Management with Terraform</a></li>
-  </ul>
+  <section class="bg-gray-900 py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-8 text-gray-100">👨‍💻 About Me</h2>
+      <p class="max-w-2xl mx-auto text-lg text-gray-400">
+        I'm a DevOps Engineer with a passion for cloud technologies, Kubernetes, CI/CD pipelines, and automation. I enjoy solving complex infrastructure challenges and building highly available systems.
+      </p>
+    </div>
+  </section>
+
+  <section class="container mx-auto py-16">
+    <h2 class="text-4xl font-bold mb-8 text-center text-gray-100">🛠️ Skills</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center text-gray-300">
+      <div>
+        <div class="text-5xl mb-4">🐳</div>
+        <div>Docker</div>
+      </div>
+      <div>
+        <div class="text-5xl mb-4">☸️</div>
+        <div>Kubernetes</div>
+      </div>
+      <div>
+        <div class="text-5xl mb-4">⚙️</div>
+        <div>CI/CD</div>
+      </div>
+      <div>
+        <div class="text-5xl mb-4">🔐</div>
+        <div>Security</div>
+      </div>
+      <div>
+        <div class="text-5xl mb-4">🌐</div>
+        <div>Terraform</div>
+      </div>
+      <div>
+        <div class="text-5xl mb-4">🛠️</div>
+        <div>Automation</div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background-color: #1a202c;
+  --foreground-color: #edf2f7;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+}
+
+body.dark {
+  background-color: #2d3748;
+  color: #edf2f7;
+}
+
+.bg-background {
+  background-color: var(--background-color);
+}
+
+.text-foreground {
+  color: var(--foreground-color);
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #3182ce;
+}

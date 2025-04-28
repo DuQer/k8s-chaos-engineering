@@ -3,14 +3,48 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <h1 class="text-3xl font-bold mb-4">🛠️ Projects</h1>
-  <ul class="space-y-4">
-    <li>
-      <strong>K8s CI/CD with Rollback</strong> – a pipeline based on ArgoCD, GitHub Actions, and Helm.
-      <br /><a class="text-blue-400 hover:underline" href="https://github.com/your-user/k8s-cicd">GitHub →</a>
-    </li>
-    <li>
-      <strong>Chaos Engineering Lab</strong> – infrastructure resilience testing with Gremlin + K8s.
-    </li>
-  </ul>
+  <section class="container mx-auto py-12">
+    <h1 class="text-4xl font-bold mb-12 text-center">🛠️ My Projects</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <div class="bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col">
+        <h2 class="text-2xl font-semibold mb-4">Currency Monitor</h2>
+        <p class="flex-grow">CurrencyMonitor is a simple application to watch currency exchange rates. It allows user to register an account, display currency symbols and download it, check historical data and preview popular exchange rates. It is also possible to predict exchange rates, using LSTM(Long short-term memory) artificial neural network. Application can be run using docker container.</p>
+        <a class="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition" href="https://github.com/DuQer/CurrencyMonitor" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col">
+        <h2 class="text-2xl font-semibold mb-4">Health&Education Visualization</h2>
+        <p class="flex-grow">The project aims to compare key indicators across selected countries. It contains a comprehensive dataset comparing education and health indicators across top countries including Poland, Finland, Italy, and the USA etc… It includes key metrics like literacy rates, enrollment rates, education spending, life expectancy, infant mortality rates, and healthcare spending. Data is sourced from reputable outlets such as the World Bank, United Nations, and national government websites.</p>
+        <a class="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition" href="https://github.com/DuQer/HealthEducationVisualization" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col">
+        <h2 class="text-2xl font-semibold mb-4">Task Manager</h2>
+        <p class="flex-grow">Task Manager is a straightforward, RESTful application designed for efficient task management. It allows users to create their accounts and effectively manage their tasks. The application needs a Postman to work. The task manager uses the JWT token for authorization, which is returned in Postman when creating a new user. The user sends JSON with the necessary information and access token (in header) to a given endpoint and receives a response from the API.</p>
+        <a class="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition" href="https://github.com/DuQer/task-manager" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col">
+        <h2 class="text-2xl font-semibold mb-4">Kubernetes Chaos Engineering</h2>
+        <p class="flex-grow">This project provides a complete setup for Chaos Engineering and Kubernetes cluster monitoring using:
+          🔥 Chaos Mesh for injecting chaos and testing resiliency
+          📈 Prometheus for metrics collection
+          📊 Grafana for visualization
+          📦 Node Exporter for node-level metrics
+          🧪 Custom Grafana Dashboard tailored for real, node-level metrics
+          All components run inside Minikube and are accessible via ngrok tunnel for external access.</p>
+        <a class="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition" href="https://github.com/DuQer/k8s-chaos-engineering" target="_blank">
+            View on GitHub →
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

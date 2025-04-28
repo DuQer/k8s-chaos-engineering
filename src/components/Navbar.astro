@@ -1,0 +1,40 @@
+<nav class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white shadow-lg">
+  <div class="container mx-auto flex items-center justify-between p-6">
+    <div class="text-2xl font-bold">
+      <a href="/">My Portfolio</a>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-8">
+      <a href="/" class="hover:text-gray-300">Home</a>
+      <a href="/projects" class="hover:text-gray-300">Projects</a>
+      <a href="/about" class="hover:text-gray-300">About</a>
+      <a href="/contact" class="hover:text-gray-300">Contact</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-button" class="md:hidden focus:outline-none">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-4 space-y-2">
+    <a href="/" class="block hover:text-gray-300">Home</a>
+    <a href="/projects" class="block hover:text-gray-300">Projects</a>
+    <a href="/about" class="block hover:text-gray-300">About</a>
+    <a href="/contact" class="block hover:text-gray-300">Contact</a>
+  </div>
+
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</nav>

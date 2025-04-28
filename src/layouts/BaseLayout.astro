@@ -1,16 +1,25 @@
 ---
-import "../styles.css";
+import Navbar from '../components/Navbar.astro';
 ---
 
-<html lang="pl" class="dark">
+<!DOCTYPE html>
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevOps Blog</title>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body class="bg-background text-foreground font-sans p-6">
-    <main class="max-w-3xl mx-auto">
+  <body class="font-sans bg-gray-900 text-gray-200">
+    <!-- Navbar -->
+    <Navbar />
+
+    <main class="min-h-screen p-8">
       <slot />
     </main>
+
+    <footer class="bg-gray-900 text-gray-500 text-center py-6 text-sm mt-12">
+      © 2025 DuQer. All rights reserved.
+    </footer>
   </body>
 </html>
