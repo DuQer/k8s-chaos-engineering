@@ -1,0 +1,19 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: Schedule
+metadata:
+  name: disk-pressure-schedule
+  namespace: default
+spec:
+  schedule: "@every 10m"
+  startingDeadlineSeconds: 60
+  concurrencyPolicy: "Forbid"
+  type: StressChaos
+  stressChaos:
+    mode: one
+    selector:
+      namespaces:
+        - default
+      labelSelectors:
+        app: k8s-chaos-engineering
+    duration: "{{ .Values.duration }}"
+    stressngStressors: "hdd 1 --hdd-bytes {{ .Values.disk-bytes }}"

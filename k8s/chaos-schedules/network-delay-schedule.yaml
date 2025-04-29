@@ -1,0 +1,21 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: Schedule
+metadata:
+  name: network-delay-schedule
+  namespace: default
+spec:
+  schedule: "@every 10m"
+  startingDeadlineSeconds: 60
+  concurrencyPolicy: "Forbid"
+  type: NetworkChaos
+  networkChaos:
+    action: delay
+    mode: one
+    selector:
+      namespaces:
+        - default
+      labelSelectors:
+        app: k8s-chaos-engineering
+    delay:
+      latency: "{{ .Values.network-latency }}"
+    duration: "{{ .Values.duration }}"

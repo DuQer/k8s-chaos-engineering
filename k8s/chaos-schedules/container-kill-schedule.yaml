@@ -1,0 +1,21 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: Schedule
+metadata:
+  name: container-kill-schedule
+  namespace: default
+spec:
+  schedule: "@every 10m"
+  startingDeadlineSeconds: 60
+  concurrencyPolicy: "Forbid"
+  type: PodChaos
+  podChaos:
+    action: container-kill
+    mode: one
+    selector:
+      namespaces:
+        - default
+      labelSelectors:
+        app: k8s-chaos-engineering
+    containerNames:
+      - k8s-chaos-engineering
+    duration: "{{ .Values.duration }}"

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: chaos-config
+  namespace: default
+data:
+  network-latency: "100ms"
+  cpu-workers: "2"
+  disk-bytes: "512M"
+  duration: "1m"
